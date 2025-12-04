@@ -117,18 +117,68 @@
         <!--Audio-->
         <scene sceneID="hfq-uB-ijQ">
             <objects>
-                <viewController title="Audio" id="Yia-Ts-EZj" sceneMemberID="viewController">
+                <viewController title="Audio" id="Yia-Ts-EZj" customClass="ViewControllerAudios" customModule="HomeBase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5lt-qN-Dtn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XT0-D7-mY3">
+                                <rect key="frame" x="0.0" y="80" width="393" height="84"/>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vUI-ER-zHP">
+                                <rect key="frame" x="0.0" y="118" width="393" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="569" id="nGY-TX-NRO"/>
+                                </constraints>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" id="GBX-7l-TjA">
+                                <rect key="frame" x="0.0" y="695" width="393" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8r-sT-ziE">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="bhR-Ut-rXD"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27v-aV-8Vv">
+                                        <rect key="frame" x="80" y="0.0" width="213" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHR-NI-QXQ">
+                                        <rect key="frame" x="293" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="JPl-O9-lRE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Backup"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UaP-b3-Mgy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GBX-7l-TjA" firstAttribute="top" secondItem="vUI-ER-zHP" secondAttribute="bottom" constant="8" symbolic="YES" id="3VV-fy-vwx"/>
+                            <constraint firstItem="XT0-D7-mY3" firstAttribute="top" secondItem="5lt-qN-Dtn" secondAttribute="topMargin" constant="-38" id="Iji-nO-v7U"/>
+                            <constraint firstItem="XT0-D7-mY3" firstAttribute="trailing" secondItem="vUI-ER-zHP" secondAttribute="trailing" id="MhC-op-eOO"/>
+                            <constraint firstItem="vUI-ER-zHP" firstAttribute="top" secondItem="XT0-D7-mY3" secondAttribute="bottom" constant="-46" id="RRm-zE-TMu"/>
+                            <constraint firstItem="vUI-ER-zHP" firstAttribute="trailing" secondItem="GBX-7l-TjA" secondAttribute="trailing" id="ejX-y4-oqg"/>
+                            <constraint firstItem="vUI-ER-zHP" firstAttribute="leading" secondItem="GBX-7l-TjA" secondAttribute="leading" id="iBF-jf-KwB"/>
+                            <constraint firstItem="XT0-D7-mY3" firstAttribute="leading" secondItem="vUI-ER-zHP" secondAttribute="leading" id="tbN-k4-loA"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Audios" image="music.note" catalog="system" selectedImage="music.note" id="J62-3e-0EJ"/>
+                    <connections>
+                        <outlet property="tableViewAudio" destination="vUI-ER-zHP" id="lRD-5t-I0T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maa-Kd-xZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1767" y="165"/>
+            <point key="canvasLocation" x="-1767.175572519084" y="164.78873239436621"/>
         </scene>
         <!--Files-->
         <scene sceneID="u62-eI-AkZ">
@@ -174,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z38-sU-rfx">
-                                <rect key="frame" x="0.0" y="172" width="393" height="563"/>
+                                <rect key="frame" x="0.0" y="172" width="393" height="511"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PkZ-1d-erx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -196,11 +246,37 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" id="cPA-aS-HPx">
+                                <rect key="frame" x="0.0" y="695" width="393" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-fx-Gc3">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="xCD-Ge-ao1"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1K-Ap-lPK">
+                                        <rect key="frame" x="80" y="0.0" width="213" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCn-mq-ch5">
+                                        <rect key="frame" x="293" y="0.0" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="ynZ-K5-GOn"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Backup"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sRi-Mc-BpQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sRi-Mc-BpQ" firstAttribute="bottom" secondItem="Z38-sU-rfx" secondAttribute="bottom" id="WsA-Cf-27H"/>
+                            <constraint firstItem="sRi-Mc-BpQ" firstAttribute="bottom" secondItem="Z38-sU-rfx" secondAttribute="bottom" constant="52" id="WsA-Cf-27H"/>
                             <constraint firstItem="sRi-Mc-BpQ" firstAttribute="trailing" secondItem="Z38-sU-rfx" secondAttribute="trailing" id="hZJ-d0-B1o"/>
                             <constraint firstItem="Z38-sU-rfx" firstAttribute="top" secondItem="sRi-Mc-BpQ" secondAttribute="top" id="jsG-Uf-ZcO"/>
                             <constraint firstItem="Z38-sU-rfx" firstAttribute="leading" secondItem="sRi-Mc-BpQ" secondAttribute="leading" id="nje-s8-zDd"/>
@@ -220,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2p-Yz-imL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2640" y="928"/>
+            <point key="canvasLocation" x="-2640.4580152671756" y="927.46478873239437"/>
         </scene>
         <!--SingleMedia-->
         <scene sceneID="w2h-3z-g46">
@@ -231,47 +307,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgK-TN-9mZ">
-                                <rect key="frame" x="0.0" y="172" width="393" height="445"/>
+                                <rect key="frame" x="0.0" y="172" width="393" height="515"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjQ-ZR-AG9">
-                                <rect key="frame" x="0.0" y="685" width="393" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" id="hm2-33-5sN">
+                                <rect key="frame" x="0.0" y="695" width="393" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kI1-cf-uPG">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmh-UD-02q">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="3di-I6-CO4"/>
+                                            <constraint firstAttribute="width" constant="80" id="CNt-m0-iDb"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkr-sl-OLf">
-                                        <rect key="frame" x="80" y="0.0" width="213" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVl-Jt-7GS">
+                                        <rect key="frame" x="80" y="0.0" width="213" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJj-FA-h0S">
-                                        <rect key="frame" x="293" y="0.0" width="100" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qms-7j-LH6">
+                                        <rect key="frame" x="293" y="0.0" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="eSN-M6-UHA"/>
+                                            <constraint firstAttribute="width" constant="100" id="nBZ-zs-dbv"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Backup" titleAlignment="center"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Backup"/>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6lg-hy-HTS"/>
-                                    <constraint firstAttribute="width" constant="393" id="nZ2-A6-kAX"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wSc-Th-Dmm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FgK-TN-9mZ" firstAttribute="trailing" secondItem="zjQ-ZR-AG9" secondAttribute="trailing" id="0YW-Yq-3wM"/>
                             <constraint firstItem="FgK-TN-9mZ" firstAttribute="leading" secondItem="wSc-Th-Dmm" secondAttribute="leading" id="3ks-Z8-4o9"/>
-                            <constraint firstItem="wSc-Th-Dmm" firstAttribute="bottom" secondItem="zjQ-ZR-AG9" secondAttribute="bottom" id="CnP-gz-eeE"/>
-                            <constraint firstItem="zjQ-ZR-AG9" firstAttribute="top" secondItem="FgK-TN-9mZ" secondAttribute="bottom" constant="68" id="HwR-t6-4a4"/>
-                            <constraint firstItem="zjQ-ZR-AG9" firstAttribute="leading" secondItem="wSc-Th-Dmm" secondAttribute="leading" id="pCt-PE-t7R"/>
+                            <constraint firstItem="hm2-33-5sN" firstAttribute="top" secondItem="FgK-TN-9mZ" secondAttribute="bottom" constant="8" id="bR2-u9-d55"/>
+                            <constraint firstItem="wSc-Th-Dmm" firstAttribute="trailing" secondItem="FgK-TN-9mZ" secondAttribute="trailing" id="vmn-VN-If9"/>
                             <constraint firstItem="FgK-TN-9mZ" firstAttribute="top" secondItem="wSc-Th-Dmm" secondAttribute="top" id="xAg-sx-6aS"/>
                         </constraints>
                     </view>

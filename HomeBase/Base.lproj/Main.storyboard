@@ -105,9 +105,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Yia-Ts-EZj" kind="relationship" relationship="viewControllers" id="331-Gp-kjc"/>
-                        <segue destination="5JC-oS-SRT" kind="relationship" relationship="viewControllers" id="Elu-vQ-pQ2"/>
-                        <segue destination="w2D-7L-isw" kind="relationship" relationship="viewControllers" id="4jI-C9-2pP"/>
+                        <segue destination="w2D-7L-isw" kind="relationship" relationship="viewControllers" id="6Jy-bT-Cvk"/>
+                        <segue destination="Yia-Ts-EZj" kind="relationship" relationship="viewControllers" id="RiP-Hh-NZT"/>
+                        <segue destination="5JC-oS-SRT" kind="relationship" relationship="viewControllers" id="pKQ-DT-4UH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ap6-Fx-ca9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                         <viewLayoutGuide key="safeArea" id="UaP-b3-Mgy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Audios" id="J62-3e-0EJ"/>
+                    <tabBarItem key="tabBarItem" title="Audios" image="music.note" catalog="system" selectedImage="music.note" id="J62-3e-0EJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maa-Kd-xZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,7 +140,7 @@
                         <viewLayoutGuide key="safeArea" id="dS9-Jg-hBL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Files" id="xI7-Yf-vz5"/>
+                    <tabBarItem key="tabBarItem" title="Files" image="folder.fill" catalog="system" selectedImage="folder.fill" id="xI7-Yf-vz5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kH-09-qUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,7 +150,7 @@
         <scene sceneID="S7e-BE-G4b">
             <objects>
                 <navigationController storyboardIdentifier="PhotosVideoRoot" title="PhotosVideosRoot" automaticallyAdjustsScrollViewInsets="NO" id="w2D-7L-isw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Gallery" id="HPq-cP-9f1"/>
+                    <tabBarItem key="tabBarItem" title="Gallery" image="photo.fill" catalog="system" selectedImage="photo.fill" id="HPq-cP-9f1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UeB-Gs-S9O">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -285,6 +285,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="folder.fill" catalog="system" width="128" height="96"/>
+        <image name="music.note" catalog="system" width="96" height="128"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="trash.fill" catalog="system" width="117" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
